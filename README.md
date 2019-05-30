@@ -30,6 +30,11 @@ version 4 to version 5, it became hardware accelerated and thus software-based r
 slower given the introduction of support for pixel shaders. This is also meant to show my appreciation for old-school
 development techniques.
 
+// Spaced Out!! //
+=
+Another homebrew NES game, this time in the vein of Galaga and other arcade-style spaceship shooters. This is my capstone
+project for my Computer Science degree and thus is a bit more complex and involved than my Pong project.
+
 // Java Coursework //
 =
 Various short programs written for CS classes at Eastern Oregon University provided to demonstrate my familiarity with Java.
