@@ -9,6 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script src="jquery-3.4.1.min.js"></script>
 	<script src="main_nav.js"></script>
+	<script src="theme_changer.js"></script>
 
 </head>
 <body>
@@ -176,7 +177,11 @@
 		</div>
 	</div>
 	<div id="footer">
-		<p class="condensed">All information herein is accurate as of June 2019.<p>
+		<button type="button" class="style-button" id="red-but" onClick="goRed()">Go Red</button>
+		<button type="button" class="style-button" id="green-but" onClick="goGreen()">Go Green</button>
+		<button type="button" class="style-button" id="yellow-but" onClick="goYellow()">Go Yellow</button>
+		<button type="button" class="style-button" id="purple-but" onClick="goPurple()">Go Purple</button>
+		<button type="button" class="style-button" id="default-but" onClick="goDefault()">Default Colors</button>
 	</div>
 </div>
 
