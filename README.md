@@ -20,6 +20,11 @@ This section contains a proof of concept for a 2D platformer in the vein of Cast
 more to demonstrate my grasp of object-oriented programming than a exhibition to be tested. It was created using Visual
 Studio 2017 and the Allegro 5 2D graphics library and written in C++.
 
+// Java Coursework //
+=
+Various short programs written for CS classes at Eastern Oregon University provided to demonstrate my familiarity with Java
+and in one instance SQL integration within Java.
+
 --Coming Soon--
 // 2D Raycaster Maze //
 =
@@ -34,7 +39,3 @@ development techniques.
 =
 Another homebrew NES game, this time in the vein of Galaga and other arcade-style spaceship shooters. This is my capstone
 project for my Computer Science degree and thus is a bit more complex and involved than my Pong project.
-
-// Java Coursework //
-=
-Various short programs written for CS classes at Eastern Oregon University provided to demonstrate my familiarity with Java.
