@@ -25,6 +25,10 @@ Studio 2017 and the Allegro 5 2D graphics library and written in C++.
 Various short programs written for CS classes at Eastern Oregon University provided to demonstrate my familiarity with Java
 and in one instance SQL integration within Java.
 
+// x86 Assembly //
+=
+Various code snippets displaying my ability to understand low-level concepts in a more modern (by comparison) assembly language.
+
 --Coming Soon--
 // 2D Raycaster Maze //
 =
