@@ -25,6 +25,10 @@ Studio 2017 and the Allegro 5 2D graphics library and written in C++.
 Various short programs written for CS classes at Eastern Oregon University provided to demonstrate my familiarity with Java
 and in one instance SQL integration within Java.
 
+// Psuedo Map Editor //
+=
+A simple visual map editor for the 2D Raycaster in development. Allows the user to modify 32 x 32 grids representing wall types and texture IDs, then save them in a format readable by the main game engine that I've dubbed the Psuedo Engine (given the psuedo 3D produced... yes I know I'm lame and derivative hush). 
+
 // x86 Assembly //
 =
 Various code snippets displaying my ability to understand low-level concepts in a more modern (by comparison) assembly language.
