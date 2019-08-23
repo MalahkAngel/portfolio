@@ -27,7 +27,12 @@ and in one instance SQL integration within Java.
 
 // Psuedo Map Editor //
 =
-A simple visual map editor for the 2D Raycaster in development. Allows the user to modify 32 x 32 grids representing wall types and texture IDs, then save them in a format readable by the main game engine that I've dubbed the Psuedo Engine (given the psuedo 3D produced... yes I know I'm lame and derivative hush). 
+A simple visual map editor for the 2D Raycaster in development. Allows the user to modify 32 x 32 grids representing wall types and texture IDs, then save them in a format readable by the main game engine that I've dubbed the Psuedo Engine (given the psuedo 3D produced... yes I know I'm lame and derivative hush).
+
+// Spaced Out!! //
+=
+Another homebrew NES game, this time in the vein of Galaga and other arcade-style spaceship shooters. This is my capstone
+project for my Computer Science degree and thus is a bit more complex and involved than my Pong project.
 
 // x86 Assembly //
 =
@@ -42,8 +47,3 @@ by altering the colors of the buffer rather than drawing pixels directly. This w
 version 4 to version 5, it became hardware accelerated and thus software-based routines such as pixel drawing became much
 slower given the introduction of support for pixel shaders. This is also meant to show my appreciation for old-school
 development techniques.
-
-// Spaced Out!! //
-=
-Another homebrew NES game, this time in the vein of Galaga and other arcade-style spaceship shooters. This is my capstone
-project for my Computer Science degree and thus is a bit more complex and involved than my Pong project.
