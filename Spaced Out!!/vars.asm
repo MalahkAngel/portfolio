@@ -105,6 +105,15 @@ OAM_ADDR		= $2003		; Object Attribute Memory address register
 OAM_DATA		= $2004		; Object Attribute Memory data I/O register
 OAM_DMA			= $4014		; Direct Memory Address transfer register
 
+;==[ APU Mnemonics ]===================================================================
+APU_SQ1			= $4000
+APU_SQ1_LO		= $4002
+APU_SQ1_HI		= $4003
+APU_NOISE_V		= $400C
+APU_NOISE_T		= $400E
+APU_NOISE_L		= $400F
+APU_CHAN		= $4015
+
 ;==[ Game States ]=====================================================================
 STATE_TITLE		= $00		; Displays splash screen
 STATE_PLAY		= $01		; Displays game screen

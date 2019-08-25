@@ -369,7 +369,9 @@ movePlayer:
 activateProjectiles:
 	LDA controller
 	AND #PAD_A				; Check is A button has been pressed
-	BEQ .done				; If not, we're done
+	BNE .delayCheck			; If not, we're done
+	JMP .done
+.delayCheck:
 	LDA proj_delay			; See if delay is active
 	CMP #$00
 	BEQ .first				; If not, begin checking for active projectiles
@@ -391,6 +393,14 @@ activateProjectiles:
 	SEC
 	SBC #$04
 	STA proj1_y
+	LDA #$0F				; Trigger firing sound effect
+	STA APU_CHAN
+	LDA #$53
+	STA APU_SQ1
+	LDA #$AB
+	STA APU_SQ1_LO
+	LDA #$01
+	STA APU_SQ1_HI
 	JMP .done
 .second:
 	LDA proj2_on			; Check if second projectile is active
@@ -408,6 +418,14 @@ activateProjectiles:
 	SEC
 	SBC #$04
 	STA proj2_y
+	LDA #$0F				; Trigger firing sound effect
+	STA APU_CHAN
+	LDA #$53
+	STA APU_SQ1
+	LDA #$AB
+	STA APU_SQ1_LO
+	LDA #$01
+	STA APU_SQ1_HI
 	JMP .done
 .third:
 	LDA proj3_on			; Check if third projectile is active
@@ -425,6 +443,14 @@ activateProjectiles:
 	SEC
 	SBC #$04
 	STA proj3_y
+	LDA #$0F				; Trigger firing sound effect
+	STA APU_CHAN
+	LDA #$53
+	STA APU_SQ1
+	LDA #$AB
+	STA APU_SQ1_LO
+	LDA #$01
+	STA APU_SQ1_HI
 .done:
 	RTS
 	
@@ -926,6 +952,12 @@ updateEnemies:
 	STA enemy1_on
 	STA enemy1_x
 	STA enemy1_y
+	LDA #%00000111
+	STA APU_NOISE_V
+	LDA #%00000111
+	STA APU_NOISE_T
+	LDA #%00001000
+	STA APU_NOISE_L
 	JMP .done
 .type1Update:
 	LDA enemy1_y
@@ -1002,6 +1034,12 @@ updateEnemies:
 	STA enemy2_on
 	STA enemy2_x
 	STA enemy2_y
+	LDA #%00000111
+	STA APU_NOISE_V
+	LDA #%00000111
+	STA APU_NOISE_T
+	LDA #%00001000
+	STA APU_NOISE_L
 	JMP .done
 .type2Update:
 	LDA enemy2_y
@@ -1078,6 +1116,12 @@ updateEnemies:
 	STA enemy3_on
 	STA enemy3_x
 	STA enemy3_y
+	LDA #%00000111
+	STA APU_NOISE_V
+	LDA #%00000111
+	STA APU_NOISE_T
+	LDA #%00001000
+	STA APU_NOISE_L
 	JMP .done
 .type3Update:
 	LDA enemy3_y
@@ -1115,7 +1159,7 @@ updateEnemies:
 	RTS
 
 ;==[ updateScore ]== Update player score and enemy speed ===============================
-updateScore:
+updateScore:				; Break down binary number into decimal digits for display
 .modifySpeed:
 	LDA score
 	CMP #$32
@@ -1170,7 +1214,7 @@ updateScore:
 .ones:
 	LDA score_temp
 	STA score_1
-.display:
+.display:					; Draw score sprites
 	LDA #$E0
 	STA SPRITE_SCORE1
 	LDA #$32
@@ -1242,7 +1286,7 @@ updateScore:
 	STA SPRITE_SCORE1+30
 	LDA #$48
 	STA SPRITE_SCORE1+31
-.lives:
+.lives:								; Draw life counter
 	LDA #$D8
 	STA SPRITE_SCORE1+32
 	LDA #$2B
@@ -1294,12 +1338,12 @@ updateScore:
 	STA SPRITE_SCORE1+54
 	LDA #$38
 	STA SPRITE_SCORE1+55
-.win:
+.win:							; If player gets 255 points, game ends
 	LDA score
 	CMP #$FF
 	BNE .lose
-	JSR initGameOver
-.lose:
+	JSR initGameOver	
+.lose:							; If 9 ships are allowed to pass, game ends
 	LDA fail_count
 	CMP #$00
 	BNE .done

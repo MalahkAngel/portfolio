@@ -18,8 +18,6 @@ vBlankWait:				; Burn cycles while waiting for PPU to initialize
 RESET:
 	SEI          		; Disable Interrupt Requests (IRQs)
 	CLD          		; Disable Decimal Mode (2A03 lacks support)
-	LDX #$40
-	STX $4017    		; Disable Audio Processing Unit (APU) frame IRQ
 	LDX #$FF
 	TXS          		; Initialize stack
 	INX          		; Overflow X to $00
